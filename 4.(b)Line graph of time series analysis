@@ -1,0 +1,17 @@
+install.packages("ggplot2")
+library(ggplot2)
+
+
+data <- data.frame(
+  Month = factor(c("January", "February", "March", "April", "May"), 
+                 levels = c("January", "February", "March", "April", "May")),
+  Sales = c(15000, 18000, 22000, 20000, 23000)
+)
+
+
+line_graph <- ggplot(data, aes(x = Month, y = Sales)) +
+  geom_line() +
+  labs(title = "Line Graph - Monthly Sales", x = "Month", y = "Sales ($)")
+
+
+print(line_graph)
