@@ -1,0 +1,16 @@
+install.packages("ggplot2")
+library(ggplot2)
+
+
+data <- data.frame(
+  Month = factor(c("January", "February", "March", "April", "May"), 
+                 levels = c("January", "February", "March", "April", "May")),
+  Sales = c(15000, 18000, 22000, 20000, 23000)
+)
+
+
+scatter_plot <- ggplot(data, aes(x = Month, y = Sales)) +
+  geom_point() +
+  labs(title = "Scatter Plot - Monthly Sales", x = "Month", y = "Sales ($)")
+
+print(scatter_plot)
