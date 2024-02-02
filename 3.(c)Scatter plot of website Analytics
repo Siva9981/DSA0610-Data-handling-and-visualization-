@@ -1,0 +1,18 @@
+
+install.packages("ggplot2")
+install.packages("dplyr")
+library(ggplot2)
+library(dplyr)
+
+
+data <- data.frame(
+  Date = as.Date(c("2023-01-01", "2023-01-02", "2023-01-03", "2023-01-04", "2023-01-05")),
+  Page_Views = c(1500, 1600, 1400, 1650, 1800),
+  Click_Through_Rate = c(2.3, 2.7, 2.0, 2.4, 2.6)
+)
+print(data)
+
+scatter_plot <- ggplot(data, aes(x = Page_Views, y = Click_Through_Rate)) +
+  geom_point() +
+  labs(title = "Scatter Plot", x = "Page Views", y = "Click-through Rate")
+print(scatter_plot)
